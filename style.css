@@ -1,21 +1,44 @@
+body {
+  font-family: Helvetica;
+  background-color: rgb(228, 232, 255);
+}
+a {
+  all: unset;
+}
+a:hover {
+  cursor: pointer;
+  color: rgb(245, 88, 15);
+}
 .sorting {
   display: flex;
   align-items: baseline;
   gap: 2rem;
+  justify-content: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
 }
 .book-display {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.3rem;
   align-items: flex-end;
+  justify-content: center;
+  margin-top: 1rem;
 }
 .book-front {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   padding: 0.5rem;
   position: relative;
   width: 5rem;
   border-radius: 3px;
+  border-right: 5px outset;
+  border-top: 8px outset;
 }
 .title-front {
   text-align: center;
@@ -24,12 +47,14 @@
   position: absolute;
   bottom: 2px;
   font-size: smaller;
+  text-align: center;
 }
 
 .book-shelf {
   height: 25rem;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 }
 
 .book {
@@ -41,6 +66,9 @@
   padding-top: 1rem;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
+}
+.book:hover {
+  zoom: 120%;
 }
 .title {
   writing-mode: vertical-rl;
@@ -54,8 +82,8 @@
 .shelf {
   height: 1rem;
   background-color: burlywood;
-  width: 95vw;
-  margin-top: 2px;
+
+  margin-top: 1px;
 }
 /*Individual book styling */
 .isbn9780062476371 {

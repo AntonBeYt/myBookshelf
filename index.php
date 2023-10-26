@@ -1,4 +1,6 @@
-<?php require __DIR__ . ('/books.php');
+<?php
+require __DIR__ . ('/books.php');
+require __DIR__ . ('/functions.php');
 if (isset($_GET['author'])) {
     if ($_GET['author'] == 'asc') {
         array_multisort(array_column($books, 'author'), SORT_ASC, $books);
@@ -25,8 +27,8 @@ if (isset($_GET['year'])) {
 <body>
     <div class="sorting">
         <h1>Sort by:</h1>
-        <p><a href="?author=asc">Author alphabetical</a> </p>
-        <p><a href="?year=asc">Publishing Year</a> </p>
+        <p><a href="?author=asc">Author</a> </p>
+        <p><a href="?year=asc">Year</a> </p>
     </div>
     <form action="index.php" method="get">
         <label for="freeSearch">Free search:</label>
@@ -34,14 +36,14 @@ if (isset($_GET['year'])) {
         <button type="submit">Search</button>
     </form>
     <?php if (isset($_GET['freeSearch'])) {
-        $userSearch = $_GET['freeSearch']; ?>
-        <h4>Result:</h4>
+        $userSearch = htmlspecialchars($_GET['freeSearch']);
+        $userSearch = strtolower($userSearch) ?>
         <div class="book-display">
             <?php foreach ($books as $book) :
-                if (preg_match("/.*($userSearch).*$/i", $book['author'], $matches) || preg_match("/.*($userSearch).*$/i", $book['title'], $matches)) { ?>
+                if (preg_match("/.*($userSearch).*$/i", strtolower($book['author']), $matches) || preg_match("/.*($userSearch).*$/i", strtolower($book['title']), $matches)) { ?>
                     <div class="book-front isbn<?= $book['isbn'] ?>">
                         <div class="title-front"><?= $book['title'] ?></div>
-                        <div class="author-front"><?= $book['author'] ?></div>
+                        <div class="author-front"><?= reverseStringWords($book['author']) ?></div>
                     </div>
             <?php };
             endforeach; ?>
