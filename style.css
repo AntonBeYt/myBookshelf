@@ -1,6 +1,10 @@
 body {
   font-family: Helvetica;
   background-color: rgb(228, 232, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
 }
 a {
   all: unset;
@@ -11,9 +15,30 @@ a:hover {
 }
 .sorting {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 2rem;
   justify-content: center;
+  padding-top: 3rem;
+}
+.dropdown {
+  position: relative;
+}
+.dropdownBtn {
+  display: flex;
+  width: 5rem;
+}
+.dropdownContent {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: aliceblue;
+  width: 4rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.show {
+  display: block;
+  padding-left: 1rem;
 }
 form {
   display: flex;
@@ -51,8 +76,8 @@ form {
 }
 
 .book-shelf {
-  height: 25rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
 }
@@ -64,11 +89,14 @@ form {
   justify-content: space-between;
   flex-direction: column;
   padding-top: 1rem;
+  margin-top: 1rem;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
+  border-bottom: 1rem solid burlywood;
 }
 .book:hover {
   zoom: 120%;
+  cursor: default;
 }
 .title {
   writing-mode: vertical-rl;
@@ -78,6 +106,7 @@ form {
   font-size: x-small;
   width: 3rem;
   text-align: center;
+  margin-bottom: 2px;
 }
 .shelf {
   height: 1rem;
@@ -107,11 +136,11 @@ form {
   background-color: rgb(241, 199, 84);
 }
 .isbn9780593098233 {
-  height: 8rem;
+  height: 7.9rem;
   background-color: rgb(47, 94, 171);
 }
 .isbn9781473233782 {
-  height: 8rem;
+  height: 8.1rem;
   background-color: rgb(226, 152, 72);
 }
 .isbn9780593098257 {
@@ -119,7 +148,7 @@ form {
   background-color: rgb(63, 177, 205);
 }
 .isbn9780593098264 {
-  height: 8rem;
+  height: 8.2rem;
   background-color: rgb(227, 111, 85);
 }
 .isbn9781804940822 {
@@ -139,14 +168,34 @@ form {
   background-color: rgb(38, 164, 101);
 }
 .isbn9781529034530 {
-  height: 12rem;
+  height: 11.9rem;
   background-color: rgb(15, 125, 70);
 }
 .isbn9781473222175 {
-  height: 11rem;
+  height: 11.1rem;
   background-color: rgb(106, 171, 228);
 }
 .isbn9780345391834 {
-  height: 11rem;
+  height: 10.9rem;
   background-color: rgb(65, 59, 173);
+}
+.isbn9780008117498 {
+  height: 10rem;
+  background-color: rgb(230, 174, 44);
+}
+.isbn9780008117504 {
+  height: 9.8rem;
+  background-color: rgb(58, 127, 188);
+}
+.isbn9780008117511 {
+  height: 9.9rem;
+  background-color: rgb(211, 185, 80);
+}
+.isbn9780008117528 {
+  height: 10.2rem;
+  background-color: rgb(169, 71, 180);
+}
+.isbn9780008117535 {
+  height: 10rem;
+  background-color: rgb(169, 51, 84);
 }

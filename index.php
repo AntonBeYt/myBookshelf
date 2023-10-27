@@ -10,6 +10,16 @@ if (isset($_GET['year'])) {
     if ($_GET['year'] == 'asc') {
         array_multisort(array_column($books, 'year'), SORT_ASC, $books);
     }
+}
+if (isset($_GET['year'])) {
+    if ($_GET['year'] == 'desc') {
+        array_multisort(array_column($books, 'year'), SORT_DESC, $books);
+    }
+}
+if (isset($_GET['title'])) {
+    if ($_GET['title'] == 'asc') {
+        array_multisort(array_column($books, 'title'), SORT_ASC, $books);
+    }
 } ?>
 
 
@@ -26,15 +36,21 @@ if (isset($_GET['year'])) {
 
 <body>
     <div class="sorting">
-        <h1>Sort by:</h1>
-        <p><a href="?author=asc">Author</a> </p>
-        <p><a href="?year=asc">Year</a> </p>
+        <form action="index.php" method="get">
+            <input type="text" name="freeSearch" id="freeSearch" placeholder="Free Search">
+            <button type="submit">Search</button>
+            <a href="/index.php">Reset Search</a>
+        </form>
+        <div class="dropdown">
+            <button onclick="dropdown()" class="dropdownBtn">Sort By <img role="img" style="width: 1rem;" src="https://www.svgrepo.com/show/521469/arrow-down.svg"></button>
+            <div id="myDropdown" class="dropdownContent">
+                <p><a href="?author=asc">Author</a> </p>
+                <p><a href="?title=asc">Title</a> </p>
+                <p><a href="?year=asc">Oldest</a> </p>
+                <p><a href="?year=desc">Newest</a> </p>
+            </div>
+        </div>
     </div>
-    <form action="index.php" method="get">
-        <label for="freeSearch">Free search:</label>
-        <input type="text" name="freeSearch" id="freeSearch">
-        <button type="submit">Search</button>
-    </form>
     <?php if (isset($_GET['freeSearch'])) {
         $userSearch = htmlspecialchars($_GET['freeSearch']);
         $userSearch = strtolower($userSearch) ?>
@@ -58,7 +74,13 @@ if (isset($_GET['year'])) {
             </div>
         <?php endforeach ?>
     </div>
-    <div class="shelf"></div>
+    <!-- <div class="shelf"></div> -->
+    <script>
+        function dropdown() {
+            document.getElementById('myDropdown').classList.toggle('show')
+
+        };
+    </script>
 </body>
 
 </html>

@@ -16,4 +16,10 @@ $books = [
     ['title' => 'The Restaurant at the End of the Universe', 'author' => 'Adams, Douglas', 'year' => 1980, 'isbn' => 9781529034530],
     ['title' => 'Life, the Universe and Everything', 'author' => 'Adams, Douglas', 'year' => 1982, 'isbn' => 9781473222175],
     ['title' => 'So Long and Thanks for all the Fish', 'author' => 'Adams, Douglas', 'year' => 1984, 'isbn' => 9780345391834],
+    ['title' => 'Foundation', 'author' => 'Asimov, Isaac', 'year' => 1951, 'isbn' => 9780008117498],
+    ['title' => 'Foundation and Empire', 'author' => 'Asimov, Isaac', 'year' => 1952, 'isbn' => 9780008117504],
+    ['title' => 'Second Foundation', 'author' => 'Asimov, Isaac', 'year' => 1953, 'isbn' => 9780008117511],
+    ['title' => 'Foundation\'s Edge', 'author' => 'Asimov, Isaac', 'year' => 1982, 'isbn' => 9780008117528],
+    ['title' => 'Foundation and Earth', 'author' => 'Asimov, Isaac', 'year' => 1986, 'isbn' => 9780008117535],
+
 ];
